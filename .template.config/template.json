@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Anton Bauer",
+  "classifications": [ "Common", "Web" ],
+  "identity": "Abauer.WebApiTemplate.CSharp",
+  "name": "Web API Template",
+  "shortName": "wapi"
+}

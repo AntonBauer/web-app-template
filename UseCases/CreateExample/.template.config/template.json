@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Anton Bauer",
+  "classifications": [ "Common", "Use Case" ],
+  "identity": "Abauer.UseCaseTemplate.CSharp",
+  "name": "Use Case Template",
+  "shortName": "usecase"
+}
