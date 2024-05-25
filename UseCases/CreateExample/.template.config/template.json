@@ -4,9 +4,29 @@
   "name": "Use Case Template",
   "shortName": "usecase",
   "author": "Anton Bauer",
-  "classifications": [ "Common", "Use Case" ],
+  "classifications": [
+    "Common",
+    "Use Case"
+  ],
   "tags": {
     "language": "C#",
     "type": "item"
+  },
+  "sourceName": "CreateExample",
+  "symbols": {
+    "dbCtxName": {
+      "type": "parameter",
+      "description": "DB Context Name",
+      "dataType": "string",
+      "isRequired": true,
+      "replaces": "ExampleContext"
+    },
+    "rootNamespace": {
+      "type": "parameter",
+      "description": "Root Namespace",
+      "dataType": "string",
+      "isRequired": true,
+      "replaces": "Template"
+    }
   }
 }
