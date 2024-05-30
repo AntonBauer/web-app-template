@@ -1,6 +1,3 @@
-# This workflow will build a .NET project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
-
 name: "Publish use case template"
 
 on:
@@ -15,7 +12,17 @@ jobs:
     steps:
     - name: "Checkout" 
       uses: actions/checkout@v4
+
     - name: "Setup .NET"
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
+
+    - name: "Build UseCases project"
+      run: dotnet build ./UseCases/UseCases.csproj
+
+    - name: "Pack Use Case Template"
+      run: dotnet pack ./UseCases/CreateExample/UseCaseTemplate.csproj -o ./packages -p:PackageVersion=1.0.${{ github.run_number }}
+
+    - name: "Publish Use Case Template"
+      run: dotnet nuget push ./packages/*.nupkg -k ${{ github.token }} -s "github"
