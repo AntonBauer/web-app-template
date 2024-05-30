@@ -13,6 +13,21 @@
     "type": "item"
   },
   "sourceName": "CreateExample",
+  "sources": [
+    {
+      "source": "./",
+      "target": "./",
+      "exclude": [
+        "**/[Bb]in/**",
+        "**/[Oo]bj/**",
+        ".template.config/**/*",
+        "**/*.filelist",
+        "**/*.user",
+        "**/*.lock.json",
+        "**/UseCaseTemplate.csproj"
+      ]
+    }
+  ],
   "symbols": {
     "dbCtxName": {
       "type": "parameter",
