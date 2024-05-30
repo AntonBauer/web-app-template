@@ -6,6 +6,7 @@ on:
 
 jobs:
   build:
+    name: "Publish use case template"
 
     runs-on: ubuntu-latest
 
@@ -19,7 +20,7 @@ jobs:
         dotnet-version: 8.0.x
 
     - name: "Build UseCases project"
-      run: dotnet build ./UseCases/UseCases.csproj
+      run: dotnet build ./UseCases/Template.UseCases.csproj
 
     - name: "Pack Use Case Template"
       run: dotnet pack ./UseCases/CreateExample/UseCaseTemplate.csproj -o ./packages -p:PackageVersion=1.0.${{ github.run_number }}
