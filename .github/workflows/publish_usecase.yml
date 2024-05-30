@@ -25,5 +25,8 @@ jobs:
     - name: "Pack Use Case Template"
       run: dotnet pack ./UseCases/CreateExample/UseCaseTemplate.csproj -o ./packages -p:PackageVersion=1.0.${{ github.run_number }}
 
+    - name: "Authenticate to Package Registry"
+      run: dotnet nuget add source  --username ${{github.repository_owner}} --password ${{secrets.GITHUB_TOKEN}} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/${{github.repository}}/index.json"
+
     - name: "Publish Use Case Template"
-      run: dotnet nuget push ./packages/*.nupkg -k ${{ github.token }} -s "https://nuget.pkg.github.com/${{github.repository}}/index.json"
+      run: dotnet nuget push ./packages/*.nupkg -k ${{ github.token }} -s "github"
