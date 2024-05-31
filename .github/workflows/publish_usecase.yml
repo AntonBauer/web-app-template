@@ -29,4 +29,4 @@ jobs:
       run: dotnet nuget add source --username ${{ github.repository_owner }} --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
 
     - name: "Publish Use Case Template"
-      run: dotnet nuget push ./packages/*.nupkg -k ${{ secrets.GITHUB_TOKEN }} -s "github"
+      run: dotnet nuget push ./packages/*.nupkg -k ${{ secrets.NUGET_FEED_KEY }} -s "github"
