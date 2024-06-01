@@ -1,0 +1,9 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+
+  <!-- <ItemGroup>
+    <PackageVersion Include="Abauer.GeneralDomain" Version="1.0.0" />
+  </ItemGroup> -->
+</Project>
