@@ -1,8 +1,8 @@
 {
   "$schema": "http://json.schemastore.org/template",
-  "identity": "Abauer.UseCaseTemplate.CSharp",
-  "name": "Use Case Template",
-  "shortName": "usecase",
+  "identity": "Abauer.EntityTemplate.CSharp",
+  "name": "Entity Template",
+  "shortName": "entity",
   "author": "Anton Bauer",
   "classifications": [
     "Common",
@@ -24,7 +24,7 @@
         "**/*.filelist",
         "**/*.user",
         "**/*.lock.json",
-        "**/entityTemplate.csproj"
+        "**/EntityTemplate.csproj"
       ]
     }
   ],
