@@ -1,4 +1,4 @@
-using CounterMotinor.Infrastructure.DataAccess;
+using Template.Infrastructure.DataAccess;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
