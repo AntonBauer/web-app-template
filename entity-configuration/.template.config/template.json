@@ -35,6 +35,13 @@
       "dataType": "string",
       "isRequired": true,
       "replaces": "Template"
+    },
+    "tableName": {
+      "type": "parameter",
+      "description": "Table name to which entity should be mapped",
+      "dataType": "string",
+      "isRequired": true,
+      "replaces": "Examples"
     }
   }
 }
