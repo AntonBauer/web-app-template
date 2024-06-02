@@ -1,18 +1,18 @@
 {
   "$schema": "http://json.schemastore.org/template",
-  "identity": "Abauer.EntityTemplate.CSharp",
-  "name": "Entity Template",
-  "shortName": "entity",
+  "identity": "Abauer.EntityConfigurationTemplate.CSharp",
+  "name": "Entity configuration Template",
+  "shortName": "entity-config",
   "author": "Anton Bauer",
   "classifications": [
     "Common",
-    "Entity"
+    "Entity Configuration"
   ],
   "tags": {
     "language": "C#",
     "type": "item"
   },
-  "sourceName": "ExampleEntity",
+  "sourceName": "Example",
   "sources": [
     {
       "source": "./",
@@ -24,7 +24,7 @@
         "**/*.filelist",
         "**/*.user",
         "**/*.lock.json",
-        "**/EntityTemplate.csproj"
+        "**/EntityConfigurationTemplate.csproj"
       ]
     }
   ],

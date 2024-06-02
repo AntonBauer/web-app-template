@@ -1,0 +1,69 @@
+name: "Publish use case template"
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  use-case:
+    name: "Publish use case template"
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Checkout" 
+      uses: actions/checkout@v4
+
+    - name: "Setup .NET"
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: "Pack Use Case Template"
+      run: dotnet pack ./use-case/UseCaseTemplate.csproj -o ./packages -p:PackageVersion=1.0.${{ github.run_number }}
+
+    - name: "Authenticate to Package Registry"
+      run: dotnet nuget add source --username ${{ github.repository_owner }} --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
+
+    - name: "Publish Use Case Template"
+      run: dotnet nuget push ./packages/*.nupkg -k ${{ secrets.NUGET_FEED_KEY }} -s "github"
+
+  entity:
+    name: "Publish entity template"
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Checkout" 
+      uses: actions/checkout@v4
+
+    - name: "Setup .NET"
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: "Pack Entity configuration template"
+      run: dotnet pack ./entity/EntityTemplate.csproj -o ./packages -p:PackageVersion=1.0.${{ github.run_number }}
+
+    - name: "Authenticate to Package Registry"
+      run: dotnet nuget add source --username ${{ github.repository_owner }} --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
+
+    - name: "Publish Entity configuration template"
+      run: dotnet nuget push ./packages/*.nupkg -k ${{ secrets.NUGET_FEED_KEY }} -s "github"
+
+  entity-config:
+    name: "Publish entity configuration template"
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Checkout" 
+      uses: actions/checkout@v4
+
+    - name: "Setup .NET"
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: "Pack Entity configuration template"
+      run: dotnet pack ./entity-configuration/EntityConfigurationTemplate.csproj -o ./packages -p:PackageVersion=1.0.${{ github.run_number }}
+
+    - name: "Authenticate to Package Registry"
+      run: dotnet nuget add source --username ${{ github.repository_owner }} --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
+
+    - name: "Publish Entity configuration template"
+      run: dotnet nuget push ./packages/*.nupkg -k ${{ secrets.NUGET_FEED_KEY }} -s "github"
