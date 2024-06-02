@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Template.Infrastructure.DataAccess;
 
-namespace CounterMotinor.Infrastructure.DataAccess;
+namespace Template.Infrastructure.DataAccess;
+
 public static class ServiceCollectionExtensions
 {
   internal const string ConnectionStringName = "ExampleConnection";

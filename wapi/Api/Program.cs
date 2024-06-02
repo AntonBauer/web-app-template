@@ -1,4 +1,4 @@
-using CounterMonitor.UseCases;
+using Template.UseCases;
 using Template.Api;
 
 var builder = WebApplication.CreateBuilder(args);
