@@ -5,7 +5,7 @@ using Template.Domain.Entities.Examples;
 
 namespace Template.Infrastructure.DataAccess.EntityConfigurations;
 
-internal sealed class ExampleEntityConfiguration : IEntityTypeConfiguration<ExampleEntity>
+internal sealed class ExampleEntityConfiguration : IEntityTypeConfiguration<Example>
 {
   public void Configure(EntityTypeBuilder<ExampleEntity> builder)
   {
