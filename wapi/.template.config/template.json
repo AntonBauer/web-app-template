@@ -4,9 +4,37 @@
   "name": "Web Api Template",
   "shortName": "wapi",
   "author": "Anton Bauer",
-  "classifications": [ "Common", "Web Api" ],
+  "classifications": [
+    "Common",
+    "Web Api"
+  ],
   "tags": {
     "language": "C#",
     "type": "solution"
+  },
+  "sourceName": "Template",
+  "sources": [
+    {
+      "source": "./",
+      "target": "./",
+      "exclude": [
+        "**/[Bb]in/**",
+        "**/[Oo]bj/**",
+        ".template.config/**/*",
+        "**/*.filelist",
+        "**/*.user",
+        "**/*.lock.json",
+        "**/WapiTemplate.csproj"
+      ]
+    }
+  ],
+  "symbols": {
+    "dbCtxName": {
+      "type": "parameter",
+      "description": "DB Context Name",
+      "dataType": "string",
+      "isRequired": true,
+      "replaces": "ExampleContext"
+    }
   }
 }
