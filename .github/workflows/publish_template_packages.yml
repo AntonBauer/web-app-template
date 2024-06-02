@@ -69,3 +69,24 @@ jobs:
 
     - name: "Publish Entity configuration template"
       run: dotnet nuget push ./packages/*.nupkg -k ${{ secrets.NUGET_FEED_KEY }} -s "github"
+
+  web-api:
+    name: "Publish Web Api template"
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Checkout" 
+      uses: actions/checkout@v4
+
+    - name: "Setup .NET"
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: "Pack Web Api template"
+      run: dotnet pack ./wapi/WapiTemplate.csproj -o ./packages -p:PackageVersion=1.0.${{ github.run_number }}
+
+    - name: "Authenticate to Package Registry"
+      run: dotnet nuget add source --username ${{ github.repository_owner }} --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
+
+    - name: "Publish Web Api template"
+      run: dotnet nuget push ./packages/*.nupkg -k ${{ secrets.NUGET_FEED_KEY }} -s "github"

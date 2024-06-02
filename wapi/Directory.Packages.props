@@ -4,10 +4,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- <PackageVersion Include="Abauer.GeneralDomain" Version="1.0.0" /> -->
-    <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
+    <!-- MS packages -->
     <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="8.0.4" />
+
+    <!-- EF packages -->
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.5" />
+    <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
+    
+    <!-- Personal packages -->
+    <PackageVersion Include="GeneralDomain" Version="1.0.3" />
   </ItemGroup>
 </Project>
