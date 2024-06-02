@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "identity": "Abauer.EntityTemplate.CSharp",
+  "name": "Entity Template",
+  "shortName": "entity",
+  "author": "Anton Bauer",
+  "classifications": [
+    "Common",
+    "Entity"
+  ],
+  "tags": {
+    "language": "C#",
+    "type": "item"
+  },
+  "sourceName": "ExampleEntity",
+  "sources": [
+    {
+      "source": "./",
+      "target": "./",
+      "exclude": [
+        "**/[Bb]in/**",
+        "**/[Oo]bj/**",
+        ".template.config/**/*",
+        "**/*.filelist",
+        "**/*.user",
+        "**/*.lock.json",
+        "**/EntityTemplate.csproj"
+      ]
+    }
+  ],
+  "symbols": {
+    "rootNamespace": {
+      "type": "parameter",
+      "description": "Root Namespace",
+      "dataType": "string",
+      "isRequired": true,
+      "replaces": "Template"
+    }
+  }
+}
