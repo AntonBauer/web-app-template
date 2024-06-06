@@ -18,6 +18,6 @@ internal sealed class ExampleEntityConfiguration : IEntityTypeConfiguration<Exam
 
     builder.Property(example => example.Name)
            .IsRequired()
-           .HasConversion(name => name.Value, value => NonEmptyString.CreateFrom(value));
+           .HasConversion(name => name.Value, value => NonEmptyString.Create(value).Value);
   }
 }

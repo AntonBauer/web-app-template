@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="GeneralDomain" Version="1.0.3" />
+    <PackageReference Include="Abauer.GeneralDomain" Version="1.0.5" />
   </ItemGroup>
 
 </Project>

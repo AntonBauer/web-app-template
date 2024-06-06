@@ -1,18 +1,16 @@
+using Generaldomain.Entities;
 using GeneralDomain.UtilityTypes;
 
 namespace Template.Domain.Entities.Examples;
 
-public sealed class ExampleEntity
+public sealed class ExampleEntity : Entity<ExampleEntityId, Guid>
 {
-  public ExampleEntityId Id { get; }
-
   public NonEmptyString Name { get; }
 
-  private ExampleEntity(ExampleEntityId id, NonEmptyString name) => (Id, Name) = (id, name);
+  private ExampleEntity(ExampleEntityId id, NonEmptyString name):base(id) =>
+    Name = name;
 
-  public static Validation<string, ExampleEntity> Create(string name)
-  {
-    var validatedName = NonEmptyString.Create(name);
-    return new(ExampleEntityId.CreateNew(), validatedName.);
-  }
+  public static Result<ExampleEntity> Create(string name) =>
+    NonEmptyString.Create(name)
+                  .Map(validatedName => new(ExampleEntityId.CreateNew(), validatedName));
 }
