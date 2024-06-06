@@ -21,9 +21,4 @@
     <Content Include=".\**\*" Exclude=".\**\bin\**;.\**\obj\**" />
     <Compile Remove="**\*" />
   </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Abauer.GeneralDomain" Version="1.0.5" />
-  </ItemGroup>
-
 </Project>
