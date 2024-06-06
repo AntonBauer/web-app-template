@@ -7,13 +7,16 @@ namespace Template.UseCases.CreateExample.Services;
 
 internal sealed class CreateExampleService(ExampleContext context)
 {
-  public async Task<CreatedExampleDto> Create(string name, CancellationToken cancellationToken)
+  public async Task<Result<CreatedExampleDto>> Create(string name, CancellationToken cancellationToken)
   {
-    var counter = ExampleEntity.Create(name);
+    ExampleEntity.Create(name)
+                 .Tap(example => context.Examples.Add(example))
+                 .Tap(example => context.SaveChangesAsync(cancellationToken))
+                 .Map(example => example.ToCreatedExampleDto());
 
-    context.Examples.Add(counter);
+    context.Examples.Add(exampleResult);
     await context.SaveChangesAsync(cancellationToken);
 
-    return counter.ToCreatedExampleDto();
+    return exampleResult.ToCreatedExampleDto();
   }
 }
